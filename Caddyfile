@@ -1,0 +1,7 @@
+http://ng-demo.dev   # Your site's address
+
+ext .html   # Clean URLs
+
+errors {
+  log ./var/errors.log    # Error log
+}
