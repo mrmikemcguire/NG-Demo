@@ -13,7 +13,7 @@ ngDemo.config(function($routeProvider)
               templateUrl : 'pages/cost.html',
               controller  : 'costController'
 			  })
-            .when('/array', 
+        .when('/array', 
               {
               templateUrl : 'pages/array.html',
               controller  : 'arrayController'
@@ -22,6 +22,11 @@ ngDemo.config(function($routeProvider)
               {
               templateUrl : 'pages/input.html',
               controller  : 'inputController'
+			  })
+        .when('/map', 
+              {
+              templateUrl : 'pages/map.htm',
+              controller  : 'mapController'
 			  });
 	});
 
@@ -67,6 +72,30 @@ ngDemo.controller('inputController', function($scope)
         return $scope.firstName + " " + $scope.lastName;
         }
 	});
+
+var map;
+function initMap() 
+    {
+        alert("map");
+    map = new google.maps.Map(document.getElementById('map'), 
+        {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8
+        });
+    };
+
+ngDemo.controller('mapController', function ($scope, $window) 
+    {
+    $window.map = new google.maps.Map(document.getElementById('map'), 
+        {
+        center: 
+            {
+            lat: -34.397,
+            lng: 150.644
+            },
+        zoom: 8
+        });
+    });
 
 $(document).on('click','.navbar-collapse.in',function(e)
     {
