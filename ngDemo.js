@@ -13,7 +13,7 @@ ngDemo.config(function($routeProvider)
               templateUrl : 'pages/cost.html',
               controller  : 'costController'
 			  })
-            .when('/array', 
+        .when('/array', 
               {
               templateUrl : 'pages/array.html',
               controller  : 'arrayController'
